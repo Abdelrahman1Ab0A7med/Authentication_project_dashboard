@@ -1,0 +1,134 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+/* Centering container */
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 150px); /* 100% of the viewport height */
+    height: 100%;
+}
+
+/* Style for the form */
+.my-form {
+    /* Add your form styles here */
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+.profile-picture {
+    height: 340px;
+    width: 340px;
+    object-fit: cover;
+}
+.input {
+    height: 40px;
+    width: 340px;
+
+    object-fit: cover;
+}
+.buton {
+    height: 40px;
+    width: 170px;
+    object-fit: cover;
+}
+.plog {
+    height: 35px;
+    width: 35px;
+    object-fit: cover;
+}
+td{
+    text-align : center;
+}
+.line{
+    position :relative;
+}
+.line::after {
+    content: " ";
+    width: 0.25px;
+    height: 344px;
+    position: absolute;
+    top: 33px;
+    right: 0px;
+    background-color: #27272a;
+}
+@media(min-width : 770px){
+    line::after {
+        background-color : red;
+    }
+}
+
+.btno {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+body{
+    background : url("/Images/Home_page.png");
+    background-repeat :no-repeat;
+    background-attachment:fixed;
+    background-position :center;
+    background-size : cover;
+    height :93vh;
+
+}
+
+.login {
+    background-color: #ffffff29;
+    padding: 20px;
+    width: 500px;
+    height: 575px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    border-radius: 20px;
+    backdrop-filter: blur(7.5px);
+}
+
+
+.foter {
+    background-color: #ffffff70;
+    backdrop-filter: blur(7.5px);
+    display: flex;
+    justify-content: center;
+    backdrop-filter: blur(7.5px);
+}
+
+.welcome{
+    color : white;
+    font-weight:700;
+    
+}
+.from {
+    background-color: #ffffff29;
+    padding: 10px;
+    border-radius: 10px;
+    backdrop-filter: blur(7.5px);
+}
+.radius{
+    border-radius:10px;
+}
+/*#f8f9fa91*/
+.navi {
+    background-color: #ffffff70;
+    backdrop-filter: blur(7.5px);
+}

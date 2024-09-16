@@ -1,0 +1,104 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+
+<div class="center-container">
+    <form id="registerForm" class="from" asp-route-returnUrl="@Model.ReturnUrl" method="post" enctype="multipart/form-data">
+        <h2>Create a new account.</h2>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="d-flex justify-content-center flex-wrap mb-2 gap-2">
+            <div class="flex-shrink-0s" style="width: 500px;">
+                <div class="form-floating m-2">
+                    <input asp-for="Input.FirstName" class="form-control radius" autocomplete="firstname" aria-required="true" />
+                    <label asp-for="Input.FirstName"></label>
+                    <span asp-validation-for="Input.FirstName" class="text-danger"></span>
+                </div>
+                <div class="form-floating m-2">
+                    <input asp-for="Input.LastName" class="form-control radius" autocomplete="lastname" aria-required="true" />
+                    <label asp-for="Input.LastName"></label>
+                    <span asp-validation-for="Input.LastName" class="text-danger"></span>
+                </div>
+
+                <div class="form-floating m-2">
+                    <input asp-for="Input.Email" class="form-control radius" autocomplete="username" aria-required="true" />
+                    <label asp-for="Input.Email"></label>
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+                <div class="form-floating m-2">
+                    <input asp-for="Input.Password" class="form-control radius" autocomplete="new-password" aria-required="true" />
+                    <label asp-for="Input.Password"></label>
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+                <div class="form-floating m-2">
+                    <input asp-for="Input.ConfirmPassword" class="form-control radius" autocomplete="new-password" aria-required="true" />
+                    <label asp-for="Input.ConfirmPassword"></label>
+                    <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                </div>
+                <label asp-for="Input.Gender" class="form-floating m-2"></label>
+                <div class="form-floating m-2">
+                    <div class="form-check m-2">
+                        <input asp-for="Input.Gender" class="form-check-input radius" type="radio" name="flexRadioDefault" value="m" id="flexRadioDefault1">
+                        <label asp-for="Input.Gender" class="form-check-label" for="flexRadioDefault1"> Male </label>
+                    </div>
+                    <div class="form-check m-2">
+                        <input asp-for="Input.Gender" class="form-check-input radius" type="radio" name="flexRadioDefault" value="f" id="flexRadioDefault2">
+                        <label asp-for="Input.Gender" class="form-check-label" for="flexRadioDefault2"> Female </label>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <img id="profilepicture" class="profile-picture m-3 radius" src="~/Images/ProfilePicture.png" />
+                <input type="file"
+                       id="inputPic"
+                       accept="image/*"
+                       asp-for="Input.ProfilePicture"
+                       name="ProfilePicture"
+                       class="form-control radius"
+                       onchange="document.getElementById('profilepicture').src = window.URL.createObjectURL(this.files[0]);" />
+            </div>
+        </div>
+        <div>
+            <button id="registerSubmit" type="submit" class="radius btn btn-lg btn-primary px-5 mx-auto d-block my-3">Register</button>
+        </div>
+    </form>
+</div>
+
+    @*<div class="col-md-6 col-md-offset-2">
+        <section>
+            <h3>Use another service to register.</h3>
+            <hr />
+            @{
+                if ((Model.ExternalLogins?.Count ?? 0) == 0)
+                {
+                    <div>
+                        <p>
+                            There are no external authentication services configured. See this <a href="https://go.microsoft.com/fwlink/?LinkID=532715">article
+                            about setting up this ASP.NET application to support logging in via external services</a>.
+                        </p>
+                    </div>
+                }
+                else
+                {
+                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+                        <div>
+                            <p>
+                                @foreach (var provider in Model.ExternalLogins!)
+                                {
+                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+                                }
+                            </p>
+                        </div>
+                    </form>
+                }
+            }
+        </section>
+    </div>
+
+	*@
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

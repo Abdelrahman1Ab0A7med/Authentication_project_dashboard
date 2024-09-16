@@ -1,0 +1,24 @@
+﻿@model Book
+@{
+	var book = Model;
+}
+<div><a asp-action="Index" class="btn btn-warning  m-2">Back</a></div>
+<form asp-action="Edit" class="form-control" method="post">
+	<div>
+		<span>@book.Name</span>
+		<label asp-for="Name"></label>
+		<input asp-for="Name" class="form-control"  />
+		<span asp-validation-for="Name" class="text-danger"></span>
+	</div>
+	<div>
+		<label asp-for="Description"></label>
+		<input asp-for="Description" class="form-control"  />
+		<span asp-validation-for="Description" class="text-danger"></span>
+	</div>
+	<div>
+		<label asp-for="Type"></label>
+		<input asp-for="Type" class="form-control"  />
+		<span asp-validation-for="Type" class="text-danger" ></span>
+	</div>
+	<button class="btn btn-success">Save</button>
+</form>
